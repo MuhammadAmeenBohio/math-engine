@@ -3,81 +3,84 @@
 
 @layer theme {
   :root {
-    --color-canvas: #FCF9EA;
-    --color-ink: #1E231D;
-    --color-ink-muted: rgba(30, 35, 29, 0.62);
-    --color-amber: #DB9558;
-    --color-sage: #97A87A;
-    --color-olive-tint: #A8BBA3;
-    --color-olive-tint-soft: rgba(168, 187, 163, 0.25);
-    
+    /* Deep Forest / Teal theme. Two-accent system: teal (primary accent) + forest green (secondary).
+       Tertiary and olive-tint alias secondary/teal respectively - kept as separate token names
+       only so existing component classes don't need renaming. */
+    --color-canvas: #F3F7F5;
+    --color-ink: #0F2E22;
+    --color-ink-muted: rgba(15, 46, 34, 0.62);
+    --color-amber: #1A8F6B;
+    --color-sage: #4C8068;
+    --color-olive-tint: #4C8068;
+    --color-olive-tint-soft: rgba(76, 128, 104, 0.25);
+
     --color-surface: #FFFFFF;
     --color-surface-container-lowest: #FFFFFF;
-    --color-surface-container-low: #F1F5EB;
-    --color-surface-container: #EBEFE6;
-    --color-surface-container-high: #E5EAE0;
-    --color-surface-variant: #DFE4DA;
-    
-    --color-primary: #89511A;
-    --color-primary-container: #DB9558;
+    --color-surface-container-low: #EAF4F0;
+    --color-surface-container: #DCEEE5;
+    --color-surface-container-high: #CFE6DA;
+    --color-surface-variant: #C3DED2;
+
+    --color-primary: #0B3D2E;
+    --color-primary-container: #1A8F6B;
     --color-on-primary: #FFFFFF;
-    
-    --color-secondary: #54643C;
-    --color-secondary-container: #D4E6B4;
-    --color-tertiary: #52634F;
-    --color-tertiary-fixed: #D4E8CE;
-    --color-on-tertiary-fixed-variant: #3A4B38;
-    
+
+    --color-secondary: #3A6B54;
+    --color-secondary-container: #D2EDE2;
+    --color-tertiary: #3A6B54;
+    --color-tertiary-fixed: #D2EDE2;
+    --color-on-tertiary-fixed-variant: #0B3D2E;
+
     --color-error: #B5472F;
     --color-error-container: #FFDAD6;
-    
-    --color-hairline: rgba(30, 35, 29, 0.12);
-    --color-secondary-fixed: #D7E9B7;
-    --color-on-secondary-fixed: #131F01;
-    --color-primary-fixed: #FFDCC2;
-    --color-on-primary-fixed-variant: #6D3A02;
+
+    --color-hairline: rgba(15, 46, 34, 0.12);
+    --color-secondary-fixed: #D2EDE2;
+    --color-on-secondary-fixed: #0B3D2E;
+    --color-primary-fixed: #BEE8D7;
+    --color-on-primary-fixed-variant: #0B3D2E;
   }
 }
 
 /* Custom utility classes mapping to project design tokens */
-.bg-canvas { background-color: #FCF9EA; }
-.bg-ink { background-color: #1E231D; }
-.text-ink { color: #1E231D; }
-.text-ink-muted { color: rgba(30, 35, 29, 0.62); }
-.bg-amber { background-color: #DB9558; }
-.text-amber { color: #DB9558; }
-.border-amber { border-color: #DB9558; }
-.bg-sage { background-color: #97A87A; }
-.text-sage { color: #97A87A; }
-.border-sage\/30 { border-color: rgba(151, 168, 122, 0.3); }
-.bg-olive-tint { background-color: #A8BBA3; }
-.bg-olive-tint-soft { background-color: rgba(168, 187, 163, 0.25); }
+.bg-canvas { background-color: #F3F7F5; }
+.bg-ink { background-color: #0F2E22; }
+.text-ink { color: #0F2E22; }
+.text-ink-muted { color: rgba(15, 46, 34, 0.62); }
+.bg-amber { background-color: #1A8F6B; }
+.text-amber { color: #1A8F6B; }
+.border-amber { border-color: #1A8F6B; }
+.bg-sage { background-color: #4C8068; }
+.text-sage { color: #4C8068; }
+.border-sage\/30 { border-color: rgba(76, 128, 104, 0.3); }
+.bg-olive-tint { background-color: #4C8068; }
+.bg-olive-tint-soft { background-color: rgba(76, 128, 104, 0.25); }
 
 .bg-surface { background-color: #FFFFFF; }
 .text-surface { color: #FFFFFF; }
 .bg-surface-container-lowest { background-color: #FFFFFF; }
-.bg-surface-container-low { background-color: #F1F5EB; }
-.bg-surface-container { background-color: #EBEFE6; }
-.bg-surface-container-high { background-color: #E5EAE0; }
-.bg-surface-variant { background-color: #DFE4DA; }
+.bg-surface-container-low { background-color: #EAF4F0; }
+.bg-surface-container { background-color: #DCEEE5; }
+.bg-surface-container-high { background-color: #CFE6DA; }
+.bg-surface-variant { background-color: #C3DED2; }
 
-.border-hairline { border-color: rgba(30, 35, 29, 0.12); }
-.bg-hairline { background-color: rgba(30, 35, 29, 0.12); }
+.border-hairline { border-color: rgba(15, 46, 34, 0.12); }
+.bg-hairline { background-color: rgba(15, 46, 34, 0.12); }
 
-.bg-primary { background-color: #89511A; }
-.text-primary { color: #89511A; }
-.bg-secondary { background-color: #54643C; }
-.text-secondary { color: #54643C; }
-.bg-secondary-container { background-color: #D4E6B4; }
-.bg-secondary-fixed { background-color: #D7E9B7; }
-.text-on-secondary-fixed { color: #131F01; }
-.bg-primary-fixed { background-color: #FFDCC2; }
-.text-on-primary-fixed-variant { color: #6D3A02; }
+.bg-primary { background-color: #0B3D2E; }
+.text-primary { color: #0B3D2E; }
+.bg-secondary { background-color: #3A6B54; }
+.text-secondary { color: #3A6B54; }
+.bg-secondary-container { background-color: #D2EDE2; }
+.bg-secondary-fixed { background-color: #D2EDE2; }
+.text-on-secondary-fixed { color: #0B3D2E; }
+.bg-primary-fixed { background-color: #BEE8D7; }
+.text-on-primary-fixed-variant { color: #0B3D2E; }
 
-.bg-tertiary { background-color: #52634F; }
-.text-tertiary { color: #52634F; }
-.bg-tertiary-fixed { background-color: #D4E8CE; }
-.text-on-tertiary-fixed-variant { color: #3A4B38; }
+.bg-tertiary { background-color: #3A6B54; }
+.text-tertiary { color: #3A6B54; }
+.bg-tertiary-fixed { background-color: #D2EDE2; }
+.text-on-tertiary-fixed-variant { color: #0B3D2E; }
 
 .text-error { color: #B5472F; }
 .bg-error-container { background-color: #FFDAD6; }
@@ -209,24 +212,24 @@
 
 /* Unified Design System Elevation & Shadows */
 .shadow-soft {
-  box-shadow: 0 1px 3px 0 rgba(30, 35, 29, 0.05), 0 1px 2px -1px rgba(30, 35, 29, 0.05);
+  box-shadow: 0 1px 3px 0 rgba(15, 46, 34, 0.05), 0 1px 2px -1px rgba(15, 46, 34, 0.05);
 }
 .shadow-card {
-  box-shadow: 0 2px 8px 0 rgba(30, 35, 29, 0.04), 0 1px 2px 0 rgba(30, 35, 29, 0.02);
+  box-shadow: 0 2px 8px 0 rgba(15, 46, 34, 0.04), 0 1px 2px 0 rgba(15, 46, 34, 0.02);
 }
 .shadow-card-hover {
-  box-shadow: 0 8px 24px -4px rgba(30, 35, 29, 0.08), 0 2px 6px -1px rgba(30, 35, 29, 0.04);
+  box-shadow: 0 8px 24px -4px rgba(15, 46, 34, 0.08), 0 2px 6px -1px rgba(15, 46, 34, 0.04);
 }
 .shadow-glow-amber {
-  box-shadow: 0 0 0 1px #DB9558, 0 4px 16px -2px rgba(219, 149, 88, 0.25);
+  box-shadow: 0 0 0 1px #1A8F6B, 0 4px 16px -2px rgba(26, 143, 107, 0.25);
 }
 
 @layer base {
   html, body {
     margin: 0;
     padding: 0;
-    background-color: #FCF9EA;
-    color: #1E231D;
+    background-color: #F3F7F5;
+    color: #0F2E22;
     font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   }
 }

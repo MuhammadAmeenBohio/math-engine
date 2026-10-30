@@ -78,7 +78,7 @@ export function ExpressionEditor({
         const file = items[i].getAsFile();
         if (file) {
           // Notify user of clipboard paste event
-          const event = new CustomEvent('mathlens:clipboard-image', { detail: { file } });
+          const event = new CustomEvent('math-engine:clipboard-image', { detail: { file } });
           window.dispatchEvent(event);
         }
       }
@@ -103,7 +103,7 @@ export function ExpressionEditor({
           aria-label="Expression to solve"
         />
         {hasLowConfidenceHints && (
-          <div className="mt-1 flex items-center gap-1.5 rounded-md bg-amber/15 px-2.5 py-1 text-xs text-[#89511A] border border-amber/30">
+          <div className="mt-1 flex items-center gap-1.5 rounded-md bg-amber/15 px-2.5 py-1 text-xs text-[#0B3D2E] border border-amber/30">
             <span className="font-semibold">Note:</span> Ambiguous symbols detected. Verify highlighted characters before solving.
           </div>
         )}

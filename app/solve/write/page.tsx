@@ -149,7 +149,7 @@ export default function WriteSolvePage() {
       ctx.lineWidth = strokeWidth === "fine" ? 12 : strokeWidth === "medium" ? 24 : 36;
     } else {
       ctx.globalCompositeOperation = "source-over";
-      ctx.strokeStyle = "#1E231D";
+      ctx.strokeStyle = "#0F2E22";
       ctx.lineCap = "round";
       ctx.lineJoin = "round";
       ctx.lineWidth = strokeWidth === "fine" ? 2.5 : strokeWidth === "medium" ? 4 : 6;
@@ -476,7 +476,7 @@ export default function WriteSolvePage() {
                             aria-label="Fine stroke"
                           >
                             <span
-                              className="rounded-full shrink-0 bg-[#1E231D]"
+                              className="rounded-full shrink-0 bg-[#0F2E22]"
                               style={{ width: '4px', height: '4px' }}
                             ></span>
                           </button>
@@ -492,7 +492,7 @@ export default function WriteSolvePage() {
                             aria-label="Medium stroke"
                           >
                             <span
-                              className="rounded-full shrink-0 bg-[#1E231D]"
+                              className="rounded-full shrink-0 bg-[#0F2E22]"
                               style={{ width: '7px', height: '7px' }}
                             ></span>
                           </button>
@@ -508,7 +508,7 @@ export default function WriteSolvePage() {
                             aria-label="Bold stroke"
                           >
                             <span
-                              className="rounded-full shrink-0 bg-[#1E231D]"
+                              className="rounded-full shrink-0 bg-[#0F2E22]"
                               style={{ width: '10px', height: '10px' }}
                             ></span>
                           </button>
@@ -566,10 +566,10 @@ export default function WriteSolvePage() {
                         <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-40" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
                           <defs>
                             <pattern height="24" id="dot-pattern" patternUnits="userSpaceOnUse" width="24">
-                              <circle cx="12" cy="12" fill="#1E231D" fillOpacity="0.25" r="1.15"></circle>
+                              <circle cx="12" cy="12" fill="#0F2E22" fillOpacity="0.25" r="1.15"></circle>
                             </pattern>
                             <pattern height="120" id="major-guide" patternUnits="userSpaceOnUse" width="120">
-                              <path d="M 120 0 L 0 0 0 120" fill="none" stroke="#1E231D" strokeDasharray="2 4" strokeOpacity="0.08" strokeWidth="0.5"></path>
+                              <path d="M 120 0 L 0 0 0 120" fill="none" stroke="#0F2E22" strokeDasharray="2 4" strokeOpacity="0.08" strokeWidth="0.5"></path>
                             </pattern>
                           </defs>
                           <rect fill="url(#dot-pattern)" height="100%" width="100%"></rect>
@@ -587,26 +587,11 @@ export default function WriteSolvePage() {
                         className="absolute inset-0 w-full h-full z-10 touch-none cursor-crosshair"
                       />
 
-                      {/* Sample Mathematical Ink Overlay */}
+                      {/* Empty-state hint */}
                       {!isCleared && strokeCount === 0 && (
-                        <svg className="absolute inset-0 w-full h-full pointer-events-none transition-opacity duration-300 opacity-60" fill="none" viewBox="0 0 700 470" xmlns="http://www.w3.org/2000/svg">
-                          <line stroke="#1E231D" strokeDasharray="4 6" strokeOpacity="0.10" strokeWidth="1.2" x1="60" x2="640" y1="270" y2="270"></line>
-                          <line stroke="#1E231D" strokeDasharray="2 4" strokeOpacity="0.06" strokeWidth="1" x1="60" x2="640" y1="180" y2="180"></line>
-                          <path d="M 104 205 C 112 225, 128 250, 142 268" stroke="#1E231D" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.4"></path>
-                          <path d="M 140 206 C 130 226, 114 252, 102 267" stroke="#1E231D" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.2"></path>
-                          <path d="M 152 174 C 153 162, 168 159, 172 168 C 172 176, 156 186, 150 194 L 175 194" stroke="#1E231D" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6"></path>
-                          <path d="M 205 236 C 220 234.5, 235 235, 248 234" stroke="#1E231D" strokeLinecap="round" strokeWidth="3.6"></path>
-                          <path d="M 285 208 L 274 233 C 278 231, 298 230, 298 248 C 298 264, 280 269, 269 265" stroke="#1E231D" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.3"></path>
-                          <path d="M 283 208 L 305 206" stroke="#1E231D" strokeLinecap="round" strokeWidth="3.2"></path>
-                          <path d="M 330 208 C 338 226, 354 249, 368 266" stroke="#1E231D" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.4"></path>
-                          <path d="M 366 209 C 356 228, 341 251, 329 266" stroke="#1E231D" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.1"></path>
-                          <path d="M 405 235 L 433 234" stroke="#1E231D" strokeLinecap="round" strokeWidth="3.5"></path>
-                          <path d="M 419 220 L 419 250" stroke="#1E231D" strokeLinecap="round" strokeWidth="3.5"></path>
-                          <path d="M 479 204 C 472 216, 459 238, 458 252 C 457 266, 477 269, 483 259 C 487 251, 482 240, 467 241" stroke="#1E231D" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.3"></path>
-                          <path d="M 515 228 C 530 227.5, 544 227, 555 227" stroke="#1E231D" strokeLinecap="round" strokeWidth="3.4"></path>
-                          <path d="M 516 242 C 531 241.5, 545 241, 556 241" stroke="#1E231D" strokeLinecap="round" strokeWidth="3.4"></path>
-                          <path d="M 602 214 C 585 214, 582 258, 600 262 C 616 264, 617 218, 602 214 Z" stroke="#1E231D" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.2"></path>
-                        </svg>
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                          <span className="font-body-sm text-sm text-ink-muted/60">Draw an equation, e.g. x² - 5x + 6 = 0</span>
+                        </div>
                       )}
 
                       {/* Floating Inking Status Pill */}

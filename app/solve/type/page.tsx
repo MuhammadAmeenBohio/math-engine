@@ -232,7 +232,7 @@ export default function TypeSolvePage() {
               />
 
               <p className="font-code-sm text-[11px] leading-relaxed text-ink-muted pt-1">
-                Supported: linear &amp; quadratic equations, systems of equations, calculus (derivatives d/dx &amp; integrals ∫), trigonometry, logarithms, roots, and polynomial simplification.
+                Supported: linear &amp; quadratic equations, and exact arithmetic (trigonometry, logarithms, roots).
               </p>
             </div>
 
@@ -247,12 +247,10 @@ export default function TypeSolvePage() {
               <div className="flex flex-wrap gap-1.5">
                 {[
                   'x^2 - 5x + 6 = 0',
-                  'd/dx(3x^3 + 4x^2 - 5x + 6)',
-                  'int(6x^2 + 4x + 3) dx',
-                  '3x + 4y = 25, 2x - 3y = -6',
-                  'sin(0) + cos(0) * 10 + log(100)',
                   '3x + 5 = 20',
-                  '(x+2)(x+3)',
+                  '(x+2)(x+3) = 0',
+                  'x^2 + 1 = 0',
+                  'sin(0) + cos(0) * 10 + log(100)',
                   'sqrt(64) + 5!',
                 ].map((sample) => (
                   <button

@@ -1,5 +1,5 @@
 /**
- * MathLens Image Preprocessing Web Worker (FR-PP-01, FR-PP-02, FR-PP-03, FR-PP-04, FR-PP-05, FR-PP-06)
+ * Math Engine Image Preprocessing Web Worker (FR-PP-01, FR-PP-02, FR-PP-03, FR-PP-04, FR-PP-05, FR-PP-06)
  * Runs off the main thread:
  * 1. Downscales image (max 1600px)
  * 2. Grayscale & Contrast enhancement

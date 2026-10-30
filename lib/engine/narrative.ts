@@ -97,34 +97,6 @@ export function generateCompleteNarrative(
       strategyOverview =
         'We evaluate this numerical expression strictly following the standard order of operations (PEMDAS/BODMAS), simplifying grouped sub-expressions and executing exact rational arithmetic.';
       break;
-    case 'Differentiation':
-      strategyOverview =
-        'We differentiate the function term by term applying the power rule, constant multiple rule, and sum rule of differential calculus.';
-      break;
-    case 'Integration':
-      strategyOverview =
-        'We evaluate the integral term by term applying the power rule for integration, constant multiple rule, and sum rule of integral calculus.';
-      break;
-    case 'Algebraic Identity / Factoring':
-      strategyOverview =
-        'We analyze the polynomial structure to recognize canonical algebraic identities (such as difference of squares or perfect trinomials) and factor the expression into irreducible components.';
-      break;
-    case 'Algebraic Simplification':
-      strategyOverview =
-        'We simplify the polynomial by expanding multiplicative terms, grouping like powers of variables, and expressing the result in canonical descending degree order.';
-      break;
-    case 'Inequality':
-      strategyOverview =
-        'We solve this inequality by isolating the variable, determining the boundary critical values, taking into account any sign flips when multiplying or dividing by negatives, and expressing the solution set in interval notation.';
-      break;
-    case 'Limit':
-      strategyOverview =
-        'We evaluate this mathematical limit using calculus limit laws, algebraic cancellation of indeterminate forms, or direct analytic substitution.';
-      break;
-    case 'Matrix Operation':
-      strategyOverview =
-        'We perform linear algebraic matrix computations utilizing exact arithmetic, computing determinants and inverse matrices systematically.';
-      break;
     default:
       strategyOverview =
         'We solve the mathematical problem using deterministic symbolic computation and verify the result.';

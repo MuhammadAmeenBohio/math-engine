@@ -15,7 +15,7 @@ export default function GlobalError({
       error instanceof Error
         ? (error as Error & { digest?: string }).digest
         : undefined;
-    console.error(`[mathlens] global error${digest ? ` (digest: ${digest})` : ''}`);
+    console.error(`[math-engine] global error${digest ? ` (digest: ${digest})` : ''}`);
   }, [error]);
 
   return (
@@ -27,16 +27,16 @@ export default function GlobalError({
           display: 'grid',
           placeItems: 'center',
           padding: '24px',
-          background: '#FCF9EA',
-          color: '#1E231D',
+          background: '#F3F7F5',
+          color: '#0F2E22',
           fontFamily:
-            'Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif',
+            'Manrope, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif',
         }}
       >
         <main style={{ width: '100%', maxWidth: '440px' }}>
           <div
             style={{
-              border: '1px solid rgba(30, 35, 29, 0.12)',
+              border: '1px solid rgba(15, 46, 34, 0.12)',
               borderRadius: '16px',
               background: '#FFFFFF',
               padding: '28px',
@@ -49,7 +49,7 @@ export default function GlobalError({
                 fontWeight: 600,
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
-                color: '#DB9558',
+                color: '#1A8F6B',
               }}
             >
               Application error
@@ -62,7 +62,7 @@ export default function GlobalError({
                 margin: '12px 0 0',
                 fontSize: '14px',
                 lineHeight: 1.6,
-                color: 'rgba(30, 35, 29, 0.62)',
+                color: 'rgba(15, 46, 34, 0.62)',
               }}
             >
               The app hit an unexpected error. Reload to try again.
@@ -77,7 +77,7 @@ export default function GlobalError({
                   padding: '10px 20px',
                   border: 0,
                   borderRadius: '12px',
-                  background: '#1E231D',
+                  background: '#0F2E22',
                   color: '#FFFFFF',
                   fontSize: '14px',
                   fontWeight: 500,
@@ -93,10 +93,10 @@ export default function GlobalError({
                   display: 'inline-flex',
                   alignItems: 'center',
                   padding: '10px 20px',
-                  border: '1px solid rgba(30, 35, 29, 0.12)',
+                  border: '1px solid rgba(15, 46, 34, 0.12)',
                   borderRadius: '12px',
-                  background: '#F1F5EB',
-                  color: '#1E231D',
+                  background: '#EAF4F0',
+                  color: '#0F2E22',
                   fontSize: '14px',
                   fontWeight: 500,
                   textDecoration: 'none',

@@ -581,7 +581,7 @@ export default function UploadSolvePage() {
                         Upload an Image to Recognize &amp; Solve
                       </h2>
                       <p className="max-w-md font-body-sm text-body-sm text-ink-muted">
-                        Select a math worksheet, textbook screenshot, or photo. MathLens will read symbols and allow you to verify before solving.
+                        Select a math worksheet, textbook screenshot, or photo. Math Engine will read symbols and allow you to verify before solving.
                       </p>
                     </div>
                   ) : (

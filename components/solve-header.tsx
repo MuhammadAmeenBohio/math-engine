@@ -109,7 +109,7 @@ export default function SolveHeader() {
               </div>
             </div>
             <span className="font-headline-sm text-base sm:text-headline-sm tracking-tight text-ink font-semibold">
-              Math<span className="text-amber">Lens</span>
+              Math <span className="text-amber">Engine</span>
             </span>
           </Link>
           

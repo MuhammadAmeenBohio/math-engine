@@ -1,5 +1,5 @@
 /**
- * MathLens Preprocessor - FR-PP-01 to FR-PP-03
+ * Math Engine Preprocessor - FR-PP-01 to FR-PP-03
  * Grayscale, contrast stretching, Otsu binarization, and ROI crop.
  * Prepares raw camera photo frames for accurate Tesseract recognition.
  */

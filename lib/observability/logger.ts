@@ -116,4 +116,4 @@ export function createLogger(base: LogContext = {}): Logger {
   };
 }
 
-export const logger = createLogger({ service: 'mathlens' });
+export const logger = createLogger({ service: 'math-engine' });

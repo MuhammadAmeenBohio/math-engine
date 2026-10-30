@@ -170,7 +170,7 @@ export function CompleteSolutionNarrative({
           <button
             type="button"
             onClick={handleShareLink}
-            className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg border border-amber/40 bg-amber/10 hover:bg-amber/20 text-[#89511A] font-body-sm text-xs font-medium transition-colors cursor-pointer whitespace-nowrap shrink-0"
+            className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg border border-amber/40 bg-amber/10 hover:bg-amber/20 text-[#0B3D2E] font-body-sm text-xs font-medium transition-colors cursor-pointer whitespace-nowrap shrink-0"
             title="Copy shareable solution link"
           >
             {copiedLink ? (

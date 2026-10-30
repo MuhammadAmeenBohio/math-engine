@@ -59,11 +59,11 @@ const BENCHMARKS: Benchmark[] = [
     latexEquation: '\\frac{1}{3} + \\frac{1}{6}',
   },
   {
-    id: 'factor',
-    type: 'Polynomial Factoring',
-    name: 'Polynomial Factoring',
-    equation: 'x^2 + 2x + 1',
-    latexEquation: 'x^2 + 2x + 1',
+    id: 'quad-complex',
+    type: 'Quadratic Equation',
+    name: 'Complex Roots',
+    equation: 'x^2 + 4 = 0',
+    latexEquation: 'x^2 + 4 = 0',
   },
 ];
 
@@ -91,7 +91,7 @@ export default function Home() {
     '@graph': [
       {
         '@type': 'SoftwareApplication',
-        name: 'MathLens',
+        name: 'Math Engine',
         operatingSystem: 'All Modern Web Browsers',
         applicationCategory: 'EducationalApplication',
         description:
@@ -107,7 +107,7 @@ export default function Home() {
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Does MathLens use an LLM to solve problems?',
+            name: 'Does Math Engine use an LLM to solve problems?',
             acceptedAnswer: {
               '@type': 'Answer',
               text: 'No. Gemini is used only for optical character recognition. The lexer, parser, computer algebra system, and step verifier are deterministic and run locally in your browser.',
@@ -123,10 +123,10 @@ export default function Home() {
           },
           {
             '@type': 'Question',
-            name: 'What types of math problems does MathLens support?',
+            name: 'What types of math problems does Math Engine support?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'MathLens supports exact arithmetic, order of operations, linear equations, quadratic equations with real and complex roots, systems of linear equations, polynomial factoring, and calculus.',
+              text: 'Math Engine supports exact arithmetic, order of operations, linear equations, and quadratic equations with real, irrational, and complex roots.',
             },
           },
         ],
@@ -151,10 +151,10 @@ export default function Home() {
                   <circle cx="11" cy="11" r="7"></circle>
                   <path d="m16 16 4.5 4.5"></path>
                   <path d="m7 12 2-3 2.5 4" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
-                  <circle cx="13.5" cy="9.5" fill="#DB9558" r="1.5" stroke="none"></circle>
+                  <circle cx="13.5" cy="9.5" fill="#1A8F6B" r="1.5" stroke="none"></circle>
                 </svg>
               </div>
-              <span className="font-semibold text-lg sm:text-xl tracking-tight text-ink">MathLens</span>
+              <span className="font-semibold text-lg sm:text-xl tracking-tight text-ink">Math Engine</span>
             </Link>
           </div>
 
@@ -271,7 +271,6 @@ export default function Home() {
               <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[380px] sm:min-h-[420px]">
                 {/* Left: Input Expression Canvas */}
                 <div className="lg:col-span-5 p-4 sm:p-6 flex flex-col justify-between gap-4 bg-surface relative overflow-hidden border-b lg:border-b-0 lg:border-r border-black/5">
-                  <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#1E231D 1.5px, transparent 1.5px)', backgroundSize: '18px 18px' }}></div>
                   <div className="relative z-10">
                     <div className="flex items-center justify-between gap-2 mb-1.5">
                       <span className="text-xs text-ink-muted uppercase tracking-wider font-semibold truncate">Handwriting Pad</span>
@@ -280,27 +279,12 @@ export default function Home() {
                     <p className="text-xs sm:text-sm text-ink-muted">Draw equations naturally with stylus, finger, or mouse:</p>
                   </div>
 
-                  {/* SVG Handwritten Representation */}
-                  <div className="relative z-10 my-auto py-3 flex flex-col items-center justify-center w-full overflow-hidden">
-                    <svg className="w-full max-w-[280px] h-28 sm:h-32 text-ink drop-shadow-xs" fill="none" stroke="currentColor" viewBox="0 0 320 120">
-                      <line stroke="#1E231D" strokeDasharray="3 3" strokeOpacity="0.1" strokeWidth="1" x1="10" x2="310" y1="95" y2="95"></line>
-                      {/* x^2 - 5x + 6 = 0 simulated handwritten strokes */}
-                      <path d="M30 45 C45 65 52 82 58 92 M56 46 C42 66 35 83 28 91" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"></path>
-                      <path d="M68 40 C72 32 78 30 84 34 C88 38 82 46 72 52 L87 52" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2"></path>
-                      <path d="M102 68 L122 68" strokeLinecap="round" strokeWidth="3"></path>
-                      <path d="M148 48 L134 48 L133 64 C136 62 144 61 149 66 C154 71 153 82 146 87 C140 91 133 89 128 85" strokeLinecap="round" strokeWidth="3"></path>
-                      <path d="M168 55 C180 72 186 85 192 92 M190 55 C178 72 172 85 166 92" strokeLinecap="round" strokeWidth="3"></path>
-                      <path d="M208 68 L228 68" strokeLinecap="round" strokeWidth="3"></path>
-                      <path d="M248 50 C242 56 238 68 238 78 C238 86 244 92 250 92 C257 92 262 86 261 77 C260 69 253 66 244 68" strokeLinecap="round" strokeWidth="3"></path>
-                      <path d="M276 65 L298 65 M276 75 L298 75" strokeLinecap="round" strokeWidth="3"></path>
-                      <ellipse cx="310" cy="71" rx="7" ry="12" strokeLinecap="round" strokeWidth="3"></ellipse>
-
-                      <circle cx="58" cy="92" fill="#DB9558" r="2.5" stroke="none"></circle>
-                      <circle cx="84" cy="34" fill="#DB9558" r="2.5" stroke="none"></circle>
-                      <circle cx="149" cy="66" fill="#DB9558" r="2.5" stroke="none"></circle>
-                      <circle cx="250" cy="92" fill="#DB9558" r="2.5" stroke="none"></circle>
-                    </svg>
-                    <div className="inline-flex items-center gap-1.5 mt-2 px-2.5 py-1 rounded-full bg-surface-container-low border border-black/5 font-mono text-[11px] sm:text-xs text-ink-muted">
+                  {/* Equation Preview */}
+                  <div className="relative z-10 my-auto py-3 flex flex-col items-center justify-center w-full overflow-hidden gap-3">
+                    <div className="text-2xl sm:text-3xl text-ink font-semibold">
+                      <MathRenderer math="x^2 - 5x + 6 = 0" />
+                    </div>
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low border border-black/5 font-mono text-[11px] sm:text-xs text-ink-muted">
                       <span className="w-2 h-2 rounded-full bg-amber shrink-0"></span>
                       <span>Instant Stroke Recognition</span>
                     </div>
@@ -482,37 +466,37 @@ export default function Home() {
               <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
                 <table className="w-full text-left text-xs sm:text-sm min-w-[540px]">
                   <thead>
-                    <tr className="text-ink-muted text-[11px] sm:text-xs uppercase tracking-wider">
+                    <tr className="text-ink-muted text-[11px] sm:text-xs uppercase tracking-wider border-b border-black/5">
                       <th className="py-2.5 sm:py-3 px-3 sm:px-4 font-semibold">Feature</th>
-                      <th className="py-2.5 sm:py-3 px-3 sm:px-4 font-semibold text-error/90 bg-error-container/20 rounded-l-lg">Typical AI Chatbots</th>
-                      <th className="py-2.5 sm:py-3 px-3 sm:px-4 font-semibold text-ink bg-olive-tint-soft rounded-r-lg">MathLens</th>
+                      <th className="py-2.5 sm:py-3 px-3 sm:px-4 font-semibold">Typical AI Chatbots</th>
+                      <th className="py-2.5 sm:py-3 px-3 sm:px-4 font-semibold text-ink">Math Engine</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-black/5">
-                    <tr className="hover:bg-surface-container-low/40 transition-colors">
+                    <tr>
                       <td className="py-3 sm:py-4 px-3 sm:px-4 font-medium text-ink">Calculation Method</td>
-                      <td className="py-3 sm:py-4 px-3 sm:px-4 text-ink-muted bg-error-container/10">Guesses text words; frequently miscalculates signs and numbers</td>
-                      <td className="py-3 sm:py-4 px-3 sm:px-4 font-semibold text-ink bg-olive-tint-soft/50">Mathematical algebra engine with proven rules</td>
+                      <td className="py-3 sm:py-4 px-3 sm:px-4 text-ink-muted">Guesses text words; frequently miscalculates signs and numbers</td>
+                      <td className="py-3 sm:py-4 px-3 sm:px-4 font-semibold text-ink">Mathematical algebra engine with proven rules</td>
                     </tr>
-                    <tr className="hover:bg-surface-container-low/40 transition-colors">
+                    <tr>
                       <td className="py-3 sm:py-4 px-3 sm:px-4 font-medium text-ink">Fractions &amp; Roots</td>
-                      <td className="py-3 sm:py-4 px-3 sm:px-4 text-ink-muted bg-error-container/10">Rounds to decimals (1/3 ≈ 0.3333) losing accuracy</td>
-                      <td className="py-3 sm:py-4 px-3 sm:px-4 font-semibold text-ink bg-olive-tint-soft/50">Keeps exact fractions and real/complex roots</td>
+                      <td className="py-3 sm:py-4 px-3 sm:px-4 text-ink-muted">Rounds to decimals (1/3 ≈ 0.3333) losing accuracy</td>
+                      <td className="py-3 sm:py-4 px-3 sm:px-4 font-semibold text-ink">Keeps exact fractions and real/complex roots</td>
                     </tr>
-                    <tr className="hover:bg-surface-container-low/40 transition-colors">
+                    <tr>
                       <td className="py-3 sm:py-4 px-3 sm:px-4 font-medium text-ink">Answer Verification</td>
-                      <td className="py-3 sm:py-4 px-3 sm:px-4 text-ink-muted bg-error-container/10">No self-checking; confident even when wrong</td>
-                      <td className="py-3 sm:py-4 px-3 sm:px-4 font-semibold text-ink bg-olive-tint-soft/50">Validates answers by back-substitution before showing</td>
+                      <td className="py-3 sm:py-4 px-3 sm:px-4 text-ink-muted">No self-checking; confident even when wrong</td>
+                      <td className="py-3 sm:py-4 px-3 sm:px-4 font-semibold text-ink">Validates answers by back-substitution before showing</td>
                     </tr>
-                    <tr className="hover:bg-surface-container-low/40 transition-colors">
+                    <tr>
                       <td className="py-3 sm:py-4 px-3 sm:px-4 font-medium text-ink">Speed &amp; Latency</td>
-                      <td className="py-3 sm:py-4 px-3 sm:px-4 text-ink-muted bg-error-container/10">Slow 3-6 second cloud waiting time</td>
-                      <td className="py-3 sm:py-4 px-3 sm:px-4 font-semibold text-ink bg-olive-tint-soft/50">Instant browser calculation (typically &lt; 2ms)</td>
+                      <td className="py-3 sm:py-4 px-3 sm:px-4 text-ink-muted">Slow 3-6 second cloud waiting time</td>
+                      <td className="py-3 sm:py-4 px-3 sm:px-4 font-semibold text-ink">Instant browser calculation (typically &lt; 2ms)</td>
                     </tr>
-                    <tr className="hover:bg-surface-container-low/40 transition-colors">
+                    <tr>
                       <td className="py-3 sm:py-4 px-3 sm:px-4 font-medium text-ink">Privacy</td>
-                      <td className="py-3 sm:py-4 px-3 sm:px-4 text-ink-muted bg-error-container/10">Sends your entire notebook/worksheet to external servers</td>
-                      <td className="py-3 sm:py-4 px-3 sm:px-4 font-semibold text-ink bg-olive-tint-soft/50">Equations solve locally; your history stays on your device</td>
+                      <td className="py-3 sm:py-4 px-3 sm:px-4 text-ink-muted">Sends your entire notebook/worksheet to external servers</td>
+                      <td className="py-3 sm:py-4 px-3 sm:px-4 font-semibold text-ink">Equations solve locally; your history stays on your device</td>
                     </tr>
                   </tbody>
                 </table>
@@ -585,9 +569,6 @@ export default function Home() {
           {/* 6. FINAL ACADEMIC CTA BANNER */}
           <section className="w-full max-w-6xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
             <Card className="relative p-6 sm:p-12 overflow-hidden text-center flex flex-col items-center">
-              <div className="absolute -right-8 -bottom-10 text-olive-tint-soft opacity-30 select-none pointer-events-none font-serif text-[120px] sm:text-[180px] leading-none">
-                ∫
-              </div>
               <Badge variant="default" className="mb-3 sm:mb-4 text-xs">
                 <School className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary shrink-0" />
                 <span className="truncate">Free &amp; Open Math Solver</span>
@@ -623,7 +604,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 text-ink-muted text-center md:text-left text-xs">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
             <span className="w-2 h-2 rounded-full bg-sage shrink-0"></span>
-            <span>MathLens • Step-by-Step Mathematical Solver • MIT License</span>
+            <span>Math Engine • Step-by-Step Mathematical Solver • MIT License</span>
           </div>
           <div className="flex items-center justify-center gap-3 sm:gap-4 text-[11px] sm:text-xs">
             <span>Built for students &amp; educators</span>

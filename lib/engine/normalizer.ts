@@ -1,5 +1,5 @@
 /**
- * MathLens Engine - Normalizer
+ * Math Engine - Normalizer
  * FR-ME-01: Cleans variants, replaces multiplication/minus signs,
  * fixes common OCR misrecognitions, and expands implicit multiplication.
  */

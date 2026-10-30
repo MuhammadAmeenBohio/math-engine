@@ -165,27 +165,27 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="bg-[#FCF9EA] text-[#1E231D] min-h-screen flex flex-col justify-between antialiased selection:bg-[#DB9558]/30">
+    <div className="bg-[#F3F7F5] text-[#0F2E22] min-h-screen flex flex-col justify-between antialiased selection:bg-[#1A8F6B]/30">
       {/* Top Header */}
-      <header className="w-full bg-[#FCF9EA]/95 backdrop-blur-md border-b border-[#1E231D]/10 sticky top-0 z-50">
+      <header className="w-full bg-[#F3F7F5]/95 backdrop-blur-md border-b border-[#0F2E22]/10 sticky top-0 z-50">
         <div className="h-16 max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-3">
           <Link href="/" className="flex items-center gap-2 sm:gap-2.5 group shrink-0">
-            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shrink-0 shadow-xs border border-[#1E231D]/10">
-              <svg className="w-5 h-5 text-[#1E231D]" fill="none" stroke="currentColor" strokeWidth="1.75" viewBox="0 0 24 24">
+            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shrink-0 shadow-xs border border-[#0F2E22]/10">
+              <svg className="w-5 h-5 text-[#0F2E22]" fill="none" stroke="currentColor" strokeWidth="1.75" viewBox="0 0 24 24">
                 <circle cx="11" cy="11" r="7" />
                 <path d="m16 16 4.5 4.5" />
                 <path d="m7 12 2-3 2.5 4" strokeLinecap="round" strokeLinejoin="round" />
-                <circle cx="13.5" cy="9.5" fill="#DB9558" r="1.5" stroke="none" />
+                <circle cx="13.5" cy="9.5" fill="#1A8F6B" r="1.5" stroke="none" />
               </svg>
             </div>
-            <span className="text-lg sm:text-xl font-bold tracking-tight text-[#1E231D]">
-              Math<span className="text-[#DB9558]">Lens</span>
+            <span className="text-lg sm:text-xl font-bold tracking-tight text-[#0F2E22]">
+              Math <span className="text-[#1A8F6B]">Engine</span>
             </span>
           </Link>
 
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full bg-white hover:bg-[#F1F5EB] active:scale-[0.98] text-[#1E231D]/80 hover:text-[#1E231D] text-xs sm:text-sm font-medium border border-[#1E231D]/10 shadow-xs transition-all shrink-0"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full bg-white hover:bg-[#EAF4F0] active:scale-[0.98] text-[#0F2E22]/80 hover:text-[#0F2E22] text-xs sm:text-sm font-medium border border-[#0F2E22]/10 shadow-xs transition-all shrink-0"
           >
             <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
             <span>Back to home</span>
@@ -201,55 +201,55 @@ export default function AuthPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-stretch">
             {/* COLUMN 1 (On mobile: Appears FIRST via order-1 | On desktop: Left side via lg:order-1) */}
             <div className="order-1 lg:order-1 lg:col-span-6 flex flex-col h-full">
-              <div className="bg-white rounded-2xl p-5 sm:p-8 shadow-sm border border-[#1E231D]/10 flex flex-col justify-between h-full relative overflow-hidden">
+              <div className="bg-white rounded-2xl p-5 sm:p-8 shadow-sm border border-[#0F2E22]/10 flex flex-col justify-between h-full relative overflow-hidden">
 
                 {/* Central Visual Composition: Golden Ratio Compass */}
                 <div className="my-2 sm:my-6 flex flex-col items-center justify-center relative w-full">
                   <div className="relative w-full max-w-[480px] aspect-[340/190] flex items-center justify-center">
-                    <svg className="w-full h-full text-[#1E231D] overflow-visible" fill="none" viewBox="50 15 240 160">
+                    <svg className="w-full h-full text-[#0F2E22] overflow-visible" fill="none" viewBox="50 15 240 160">
                       <rect height="140" stroke="currentColor" strokeOpacity="0.12" strokeWidth="1" width="200" x="70" y="25" />
                       <rect height="140" stroke="currentColor" strokeDasharray="3 3" strokeOpacity="0.12" strokeWidth="1" width="124" x="70" y="25" />
                       <rect height="76" stroke="currentColor" strokeDasharray="3 3" strokeOpacity="0.12" strokeWidth="1" width="76" x="194" y="25" />
                       <rect height="64" stroke="currentColor" strokeDasharray="3 3" strokeOpacity="0.12" strokeWidth="1" width="48" x="194" y="101" />
-                      <path d="M70 165 C 70 87, 134 25, 212 25" stroke="#97A87A" strokeLinecap="round" strokeWidth="1.75" />
-                      <path d="M212 25 C 246 25, 270 51, 270 85" stroke="#DB9558" strokeLinecap="round" strokeWidth="1.75" />
-                      <path d="M270 85 C 270 110, 250 128, 226 128" stroke="#1E231D" strokeLinecap="round" strokeWidth="1.5" />
-                      <path d="M226 128 C 210 128, 198 116, 198 102" stroke="#97A87A" strokeLinecap="round" strokeWidth="1.25" />
-                      <circle cx="170" cy="95" r="54" stroke="#1E231D" strokeOpacity="0.25" strokeWidth="1" />
-                      <circle cx="170" cy="95" fill="#DB9558" r="4" />
-                      <line stroke="#1E231D" strokeOpacity="0.2" strokeWidth="0.75" x1="106" x2="234" y1="95" y2="95" />
-                      <line stroke="#1E231D" strokeOpacity="0.2" strokeWidth="0.75" x1="170" x2="170" y1="31" y2="159" />
-                      <text fill="#1E231D" fillOpacity="0.5" fontFamily="monospace" fontSize="9" x="76" y="40">φ = 1.618</text>
-                      <text fill="#1E231D" fillOpacity="0.5" fontFamily="monospace" fontSize="9" x="216" y="152">∇ × B = 0</text>
+                      <path d="M70 165 C 70 87, 134 25, 212 25" stroke="#4C8068" strokeLinecap="round" strokeWidth="1.75" />
+                      <path d="M212 25 C 246 25, 270 51, 270 85" stroke="#1A8F6B" strokeLinecap="round" strokeWidth="1.75" />
+                      <path d="M270 85 C 270 110, 250 128, 226 128" stroke="#0F2E22" strokeLinecap="round" strokeWidth="1.5" />
+                      <path d="M226 128 C 210 128, 198 116, 198 102" stroke="#4C8068" strokeLinecap="round" strokeWidth="1.25" />
+                      <circle cx="170" cy="95" r="54" stroke="#0F2E22" strokeOpacity="0.25" strokeWidth="1" />
+                      <circle cx="170" cy="95" fill="#1A8F6B" r="4" />
+                      <line stroke="#0F2E22" strokeOpacity="0.2" strokeWidth="0.75" x1="106" x2="234" y1="95" y2="95" />
+                      <line stroke="#0F2E22" strokeOpacity="0.2" strokeWidth="0.75" x1="170" x2="170" y1="31" y2="159" />
+                      <text fill="#0F2E22" fillOpacity="0.5" fontFamily="monospace" fontSize="9" x="76" y="40">φ = 1.618</text>
+                      <text fill="#0F2E22" fillOpacity="0.5" fontFamily="monospace" fontSize="9" x="216" y="152">∇ × B = 0</text>
                     </svg>
                   </div>
 
                   {/* Transformation Card: Handwritten -> LaTeX Engine (Hidden on mobile) */}
-                  <div className="hidden lg:flex w-full bg-[#FCF9EA] rounded-xl p-4 border border-[#1E231D]/10 shadow-sm mt-2 flex-col md:flex-row items-center justify-between gap-3">
-                    <div className="flex-1 w-full bg-white rounded-lg p-3 border border-[#1E231D]/10">
-                      <span className="text-[11px] font-medium text-[#1E231D]/60 block mb-1">OCR Handwrite Track</span>
+                  <div className="hidden lg:flex w-full bg-[#F3F7F5] rounded-xl p-4 border border-[#0F2E22]/10 shadow-sm mt-2 flex-col md:flex-row items-center justify-between gap-3">
+                    <div className="flex-1 w-full bg-white rounded-lg p-3 border border-[#0F2E22]/10">
+                      <span className="text-[11px] font-medium text-[#0F2E22]/60 block mb-1">OCR Handwrite Track</span>
                       <div className="flex items-center gap-2">
-                        <span className="text-[#1E231D]/60 text-sm">✎</span>
-                        <span className="text-base text-[#1E231D] italic font-serif select-none">
+                        <span className="text-[#0F2E22]/60 text-sm">✎</span>
+                        <span className="text-base text-[#0F2E22] italic font-serif select-none">
                           x² − 5x + 6 = 0
                         </span>
                       </div>
                     </div>
 
                     <div className="flex flex-col items-center justify-center px-2 py-1">
-                      <ArrowRight className="w-5 h-5 text-[#DB9558]" />
-                      <span className="font-mono text-[10px] text-[#1E231D]/60">1.4ms</span>
+                      <ArrowRight className="w-5 h-5 text-[#1A8F6B]" />
+                      <span className="font-mono text-[10px] text-[#0F2E22]/60">1.4ms</span>
                     </div>
 
-                    <div className="flex-1 w-full bg-white rounded-lg p-3 border border-[#1E231D]/10 flex flex-col justify-between">
+                    <div className="flex-1 w-full bg-white rounded-lg p-3 border border-[#0F2E22]/10 flex flex-col justify-between">
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-[11px] font-medium text-[#1E231D]/60">Rigorous CAS Output</span>
-                        <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-[#97A87A]/20 text-[#1E231D] text-[10px] font-semibold">
-                          <CheckCircle className="w-3 h-3 text-[#97A87A]" />
+                        <span className="text-[11px] font-medium text-[#0F2E22]/60">Rigorous CAS Output</span>
+                        <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-[#4C8068]/20 text-[#0F2E22] text-[10px] font-semibold">
+                          <CheckCircle className="w-3 h-3 text-[#4C8068]" />
                           Validated
                         </span>
                       </div>
-                      <div className="font-mono text-sm text-[#1E231D] font-bold">
+                      <div className="font-mono text-sm text-[#0F2E22] font-bold">
                         x ∈ &#123; 2 , 3 &#125;
                       </div>
                     </div>
@@ -257,34 +257,34 @@ export default function AuthPage() {
                 </div>
 
                 {/* Feature Triad Badges (Hidden on mobile) */}
-                <div className="hidden lg:grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 bg-[#FCF9EA]/50 rounded-xl p-3 border border-[#1E231D]/5">
-                  <div className="flex items-start gap-2.5 p-2 rounded-lg bg-white border border-[#1E231D]/5 shadow-sm">
-                    <div className="w-7 h-7 rounded-full bg-[#FCF9EA] flex items-center justify-center shrink-0 text-[#1E231D]">
-                      <Cpu className="w-4 h-4 text-[#89511A]" />
+                <div className="hidden lg:grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 bg-[#F3F7F5]/50 rounded-xl p-3 border border-[#0F2E22]/5">
+                  <div className="flex items-start gap-2.5 p-2 rounded-lg bg-white border border-[#0F2E22]/5 shadow-sm">
+                    <div className="w-7 h-7 rounded-full bg-[#F3F7F5] flex items-center justify-center shrink-0 text-[#0F2E22]">
+                      <Cpu className="w-4 h-4 text-[#0B3D2E]" />
                     </div>
                     <div className="min-w-0">
-                      <span className="text-xs font-semibold leading-tight block text-[#1E231D]">Local CAS</span>
-                      <span className="text-[10px] text-[#1E231D]/60 block mt-0.5">Deterministic AST</span>
+                      <span className="text-xs font-semibold leading-tight block text-[#0F2E22]">Local CAS</span>
+                      <span className="text-[10px] text-[#0F2E22]/60 block mt-0.5">Deterministic AST</span>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-2.5 p-2 rounded-lg bg-white border border-[#1E231D]/5 shadow-sm">
-                    <div className="w-7 h-7 rounded-full bg-[#FCF9EA] flex items-center justify-center shrink-0 text-[#1E231D]">
-                      <ShieldCheck className="w-4 h-4 text-[#97A87A]" />
+                  <div className="flex items-start gap-2.5 p-2 rounded-lg bg-white border border-[#0F2E22]/5 shadow-sm">
+                    <div className="w-7 h-7 rounded-full bg-[#F3F7F5] flex items-center justify-center shrink-0 text-[#0F2E22]">
+                      <ShieldCheck className="w-4 h-4 text-[#4C8068]" />
                     </div>
                     <div className="min-w-0">
-                      <span className="text-xs font-semibold leading-tight block text-[#1E231D]">Local History</span>
-                      <span className="text-[10px] text-[#1E231D]/60 block mt-0.5">Stored on this device</span>
+                      <span className="text-xs font-semibold leading-tight block text-[#0F2E22]">Local History</span>
+                      <span className="text-[10px] text-[#0F2E22]/60 block mt-0.5">Stored on this device</span>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-2.5 p-2 rounded-lg bg-white border border-[#1E231D]/5 shadow-sm">
-                    <div className="w-7 h-7 rounded-full bg-[#FCF9EA] flex items-center justify-center shrink-0 text-[#1E231D]">
-                      <CheckSquare className="w-4 h-4 text-[#DB9558]" />
+                  <div className="flex items-start gap-2.5 p-2 rounded-lg bg-white border border-[#0F2E22]/5 shadow-sm">
+                    <div className="w-7 h-7 rounded-full bg-[#F3F7F5] flex items-center justify-center shrink-0 text-[#0F2E22]">
+                      <CheckSquare className="w-4 h-4 text-[#1A8F6B]" />
                     </div>
                     <div className="min-w-0">
-                      <span className="text-xs font-semibold leading-tight block text-[#1E231D]">Step-by-Step</span>
-                      <span className="text-[10px] text-[#1E231D]/60 block mt-0.5">Verified Steps</span>
+                      <span className="text-xs font-semibold leading-tight block text-[#0F2E22]">Step-by-Step</span>
+                      <span className="text-[10px] text-[#0F2E22]/60 block mt-0.5">Verified Steps</span>
                     </div>
                   </div>
                 </div>
@@ -295,13 +295,13 @@ export default function AuthPage() {
 
             {/* COLUMN 2: Unified Auth Card (On mobile: Appears below Column 1 via order-2 | On desktop: Right side via lg:order-2) */}
             <div className="order-2 lg:order-2 lg:col-span-6 flex flex-col h-full">
-              <div className="bg-white rounded-2xl p-5 sm:p-8 shadow-sm border border-[#1E231D]/10 relative flex flex-col justify-between h-full">
+              <div className="bg-white rounded-2xl p-5 sm:p-8 shadow-sm border border-[#0F2E22]/10 relative flex flex-col justify-between h-full">
                 {/* Dynamic Header Description */}
                 <div className="mb-5 sm:mb-6">
-                  <h1 className="text-xl sm:text-2xl font-bold text-[#1E231D] tracking-tight">
+                  <h1 className="text-xl sm:text-2xl font-bold text-[#0F2E22] tracking-tight">
                     {mode === 'otp' ? 'Enter Verification Code' : 'Access Mathematical Workspace'}
                   </h1>
-                  <p className="text-xs sm:text-sm text-[#1E231D]/70 mt-1">
+                  <p className="text-xs sm:text-sm text-[#0F2E22]/70 mt-1">
                     {mode === 'otp'
                       ? `We sent a 6-digit cryptographic code to ${email}.`
                       : 'Authenticate to keep your derivation notebook, or proceed locally as a guest.'}
@@ -314,11 +314,11 @@ export default function AuthPage() {
                     <button
                       onClick={handleGoogleSignIn}
                       disabled={isGoogleLoading || isOtpLoading}
-                      className="w-full h-12 px-4 rounded-full bg-[#F1F5EB] hover:bg-[#EBEFE6] active:scale-[0.99] transition-all flex items-center justify-center gap-3 text-[#1E231D] text-sm font-medium border border-[#1E231D]/5 disabled:opacity-50"
+                      className="w-full h-12 px-4 rounded-full bg-[#EAF4F0] hover:bg-[#DCEEE5] active:scale-[0.99] transition-all flex items-center justify-center gap-3 text-[#0F2E22] text-sm font-medium border border-[#0F2E22]/5 disabled:opacity-50"
                       type="button"
                     >
                       {isGoogleLoading ? (
-                        <Loader2 className="w-5 h-5 animate-spin text-[#DB9558]" />
+                        <Loader2 className="w-5 h-5 animate-spin text-[#1A8F6B]" />
                       ) : (
                         <>
                           <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24">
@@ -347,9 +347,9 @@ export default function AuthPage() {
                     {/* Subtle Divider */}
                     <div className="relative flex items-center justify-center my-2">
                       <div className="absolute inset-0 flex items-center">
-                        <div className="w-full border-t border-[#1E231D]/10"></div>
+                        <div className="w-full border-t border-[#0F2E22]/10"></div>
                       </div>
-                      <span className="relative px-3 bg-white text-[#1E231D]/60 text-[11px] tracking-wider uppercase font-medium">
+                      <span className="relative px-3 bg-white text-[#0F2E22]/60 text-[11px] tracking-wider uppercase font-medium">
                         or continue with email
                       </span>
                     </div>
@@ -363,7 +363,7 @@ export default function AuthPage() {
                   </div>
                 )}
                 {successMsg && (
-                  <div className="mb-4 p-3 rounded-lg bg-[#97A87A]/20 border border-[#97A87A]/30 text-[#1E231D] text-xs font-medium">
+                  <div className="mb-4 p-3 rounded-lg bg-[#4C8068]/20 border border-[#4C8068]/30 text-[#0F2E22] text-xs font-medium">
                     {successMsg}
                   </div>
                 )}
@@ -372,11 +372,11 @@ export default function AuthPage() {
                 {mode === 'signin' && (
                   <form onSubmit={handleSendOtp} className="flex flex-col gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-[#1E231D] mb-1.5" htmlFor="signin-email">
+                      <label className="block text-xs font-semibold text-[#0F2E22] mb-1.5" htmlFor="signin-email">
                         Email Address
                       </label>
                       <div className="relative flex items-center">
-                        <Mail className="absolute left-3.5 text-[#1E231D]/40 w-4 h-4" />
+                        <Mail className="absolute left-3.5 text-[#0F2E22]/40 w-4 h-4" />
                         <input
                           id="signin-email"
                           value={email}
@@ -384,7 +384,7 @@ export default function AuthPage() {
                           placeholder="you@example.com"
                           required
                           type="email"
-                          className="w-full h-12 pl-10 pr-4 rounded-xl bg-[#F1F5EB] text-[#1E231D] text-sm placeholder:text-[#1E231D]/40 focus:outline-none focus:bg-white focus:ring-2 focus:ring-[#DB9558] transition-all border border-transparent focus:border-[#DB9558]"
+                          className="w-full h-12 pl-10 pr-4 rounded-xl bg-[#EAF4F0] text-[#0F2E22] text-sm placeholder:text-[#0F2E22]/40 focus:outline-none focus:bg-white focus:ring-2 focus:ring-[#1A8F6B] transition-all border border-transparent focus:border-[#1A8F6B]"
                         />
                       </div>
                     </div>
@@ -395,9 +395,9 @@ export default function AuthPage() {
                         checked={rememberDevice}
                         onChange={(e) => setRememberDevice(e.target.checked)}
                         type="checkbox"
-                        className="w-4 h-4 rounded text-[#97A87A] accent-[#97A87A] cursor-pointer"
+                        className="w-4 h-4 rounded text-[#4C8068] accent-[#4C8068] cursor-pointer"
                       />
-                      <label className="text-xs text-[#1E231D] cursor-pointer select-none" htmlFor="remember-device">
+                      <label className="text-xs text-[#0F2E22] cursor-pointer select-none" htmlFor="remember-device">
                         Remember this workstation for 30 days
                       </label>
                     </div>
@@ -405,7 +405,7 @@ export default function AuthPage() {
                     <button
                       type="submit"
                       disabled={isOtpLoading || isGoogleLoading}
-                      className="w-full h-12 rounded-full bg-[#DB9558] hover:brightness-105 active:scale-[0.99] transition-all flex items-center justify-center gap-2 text-[#1E231D] text-sm font-semibold mt-2 shadow-sm disabled:opacity-50"
+                      className="w-full h-12 rounded-full bg-[#1A8F6B] hover:brightness-105 active:scale-[0.99] transition-all flex items-center justify-center gap-2 text-[#0F2E22] text-sm font-semibold mt-2 shadow-sm disabled:opacity-50"
                     >
                       {isOtpLoading ? (
                         <Loader2 className="w-5 h-5 animate-spin" />
@@ -423,7 +423,7 @@ export default function AuthPage() {
                 {mode === 'otp' && (
                   <form onSubmit={handleVerifyOtp} className="flex flex-col gap-5">
                     <div>
-                      <label className="block text-xs font-semibold text-[#1E231D] mb-2 text-center">
+                      <label className="block text-xs font-semibold text-[#0F2E22] mb-2 text-center">
                         Enter 6-digit code
                       </label>
                       <div className="flex items-center justify-between gap-1.5 sm:gap-3 max-w-[340px] mx-auto">
@@ -438,7 +438,7 @@ export default function AuthPage() {
                             onChange={(e) => handleOtpChange(index, e.target.value)}
                             onKeyDown={(e) => handleOtpKeyDown(index, e)}
                             onPaste={handleOtpPaste}
-                            className="w-10 h-12 sm:w-12 sm:h-14 text-center font-mono text-lg sm:text-2xl font-bold bg-[#F1F5EB] border border-[#1E231D]/15 rounded-xl focus:bg-white focus:border-[#DB9558] focus:ring-2 focus:ring-[#DB9558] focus:outline-none transition-all text-[#1E231D]"
+                            className="w-10 h-12 sm:w-12 sm:h-14 text-center font-mono text-lg sm:text-2xl font-bold bg-[#EAF4F0] border border-[#0F2E22]/15 rounded-xl focus:bg-white focus:border-[#1A8F6B] focus:ring-2 focus:ring-[#1A8F6B] focus:outline-none transition-all text-[#0F2E22]"
                           />
                         ))}
                       </div>
@@ -447,7 +447,7 @@ export default function AuthPage() {
                     <button
                       type="submit"
                       disabled={isOtpLoading || isGoogleLoading}
-                      className="w-full h-12 rounded-full bg-[#DB9558] hover:brightness-105 active:scale-[0.99] transition-all flex items-center justify-center gap-2 text-[#1E231D] text-sm font-semibold shadow-sm disabled:opacity-50"
+                      className="w-full h-12 rounded-full bg-[#1A8F6B] hover:brightness-105 active:scale-[0.99] transition-all flex items-center justify-center gap-2 text-[#0F2E22] text-sm font-semibold shadow-sm disabled:opacity-50"
                     >
                       {isOtpLoading ? (
                         <Loader2 className="w-5 h-5 animate-spin" />
@@ -466,7 +466,7 @@ export default function AuthPage() {
                           setMode('signin');
                           setErrorMsg(null);
                         }}
-                        className="text-[#1E231D]/60 hover:text-[#1E231D] underline"
+                        className="text-[#0F2E22]/60 hover:text-[#0F2E22] underline"
                       >
                         Wrong email?
                       </button>
@@ -474,7 +474,7 @@ export default function AuthPage() {
                         type="button"
                         onClick={() => handleSendOtp()}
                         disabled={isOtpLoading || cooldown > 0}
-                        className="text-[#89511A] font-medium hover:underline disabled:opacity-50 disabled:no-underline"
+                        className="text-[#0B3D2E] font-medium hover:underline disabled:opacity-50 disabled:no-underline"
                       >
                         {cooldown > 0 ? `Resend in ${cooldown}s` : 'Resend Code'}
                       </button>
@@ -483,10 +483,10 @@ export default function AuthPage() {
                 )}
 
                 {/* Card Base: Guest Sandbox Mode & Telemetry Guarantee */}
-                <div className="mt-3 pt-4 border-t border-[#1E231D]/5 flex flex-col gap-3">
+                <div className="mt-3 pt-4 border-t border-[#0F2E22]/5 flex flex-col gap-3">
                   <Link
                     href="/solve/capture"
-                    className="w-full p-4 rounded-full bg-[#EBEFE6] hover:bg-[#E5EAE0] transition-colors flex flex-col sm:flex-row items-center justify-center gap-1.5 text-[#1E231D] text-center"
+                    className="w-full p-4 rounded-full bg-[#DCEEE5] hover:bg-[#CFE6DA] transition-colors flex flex-col sm:flex-row items-center justify-center gap-1.5 text-[#0F2E22] text-center"
                   >
                     <span className="text-xs font-semibold">Continue as Guest (Local Sandbox Mode)</span>
                   </Link>
@@ -499,9 +499,9 @@ export default function AuthPage() {
       </main>
 
       {/* Footer */}
-      <footer className="w-full py-4 bg-[#FCF9EA] border-t border-[#1E231D]/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center text-[#1E231D]/50 text-xs font-medium">
-          MathLens | Local history | AI-assisted OCR
+      <footer className="w-full py-4 bg-[#F3F7F5] border-t border-[#0F2E22]/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center text-[#0F2E22]/50 text-xs font-medium">
+          Math Engine | Local history | AI-assisted OCR
         </div>
       </footer>
     </div>

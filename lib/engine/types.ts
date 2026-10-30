@@ -1,5 +1,5 @@
 /**
- * MathLens Engine AST Types & Step Definitions
+ * Math Engine AST Types & Step Definitions
  * Strict deterministic representations for Computer Algebra System (CAS).
  */
 
@@ -91,15 +91,7 @@ export interface SolutionResult {
   problemType:
     | 'Quadratic Equation'
     | 'Linear Equation'
-    | 'Inequality'
-    | 'System of Linear Equations'
-    | 'Differentiation'
-    | 'Integration'
-    | 'Limit'
-    | 'Matrix Operation'
     | 'Arithmetic'
-    | 'Algebraic Simplification'
-    | 'Algebraic Identity / Factoring'
     | 'Unsupported';
   normalizedExpression: string;
   latexExpression: string;

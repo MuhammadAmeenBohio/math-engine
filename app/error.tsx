@@ -15,7 +15,7 @@ export default function ErrorPage({
       error instanceof Error
         ? (error as Error & { digest?: string }).digest
         : undefined;
-    console.error(`[mathlens] route error${digest ? ` (digest: ${digest})` : ''}`);
+    console.error(`[math-engine] route error${digest ? ` (digest: ${digest})` : ''}`);
   }, [error]);
 
   return (

@@ -21,7 +21,7 @@ export type NewHistoryItem = Omit<HistoryItem, 'id' | 'createdAt' | 'favorite'> 
   favorite?: boolean;
 };
 
-const DB_NAME = 'mathlens-history';
+const DB_NAME = 'math-engine-history';
 const STORE_NAME = 'problems';
 const DB_VERSION = 1;
 const MAX_ITEMS = 250;

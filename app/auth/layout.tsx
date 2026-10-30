@@ -1,31 +1,31 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Sign In • MathLens | Access Academic Mathematical Workspace',
+  title: 'Sign In • Math Engine | Access Academic Mathematical Workspace',
   description:
-    'Sign in to MathLens using Google or email OTP, or continue as a guest. Gemini handles optional OCR; solving and saved history stay deterministic and on-device.',
+    'Sign in to Math Engine using Google or email OTP, or continue as a guest. Gemini handles optional OCR; solving and saved history stay deterministic and on-device.',
   keywords: [
     'math solver sign in',
-    'mathlens login',
+    'math engine login',
     'math problem solver account',
     'private math workspace',
     'deterministic CAS solver',
   ],
   alternates: {
-    canonical: 'https://mathlens-rho.vercel.app/auth',
+    canonical: '/auth',
   },
   openGraph: {
-    title: 'Sign In • MathLens Mathematical Workspace',
+    title: 'Sign In • Math Engine Mathematical Workspace',
     description:
       'Access your private, deterministic math notebook. Solve arithmetic, linear, and quadratic problems with a deterministic client-side engine.',
-    url: 'https://mathlens-rho.vercel.app/auth',
-    siteName: 'MathLens',
+    url: '/auth',
+    siteName: 'Math Engine',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sign In • MathLens Mathematical Workspace',
+    title: 'Sign In • Math Engine Mathematical Workspace',
     description: 'Instant Google or email OTP login for deterministic math solving.',
   },
   robots: {
@@ -42,14 +42,14 @@ export default function AuthLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'Sign In • MathLens Academic Workspace',
-    url: 'https://mathlens-rho.vercel.app/auth',
+    name: 'Sign In • Math Engine Academic Workspace',
+    url: '/auth',
     description:
-      'Sign in to MathLens using Google or email OTP to save step-by-step derivations, or continue locally as a guest.',
+      'Sign in to Math Engine using Google or email OTP to save step-by-step derivations, or continue locally as a guest.',
     isPartOf: {
       '@type': 'WebSite',
-      name: 'MathLens',
-      url: 'https://mathlens-rho.vercel.app',
+      name: 'Math Engine',
+      url: '/',
     },
     breadcrumb: {
       '@type': 'BreadcrumbList',
@@ -58,13 +58,13 @@ export default function AuthLayout({
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://mathlens-rho.vercel.app',
+          item: '/',
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Sign In',
-          item: 'https://mathlens-rho.vercel.app/auth',
+          item: '/auth',
         },
       ],
     },

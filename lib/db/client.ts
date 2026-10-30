@@ -1,6 +1,6 @@
 import { MongoClient, Db } from 'mongodb';
 
-const rawUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/mathlens';
+const rawUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/mathengine';
 
 if (!process.env.MONGODB_URI && process.env.NODE_ENV === 'production') {
   throw new Error('MONGODB_URI environment variable is required in production.');
@@ -13,10 +13,10 @@ function parseMongoUri(raw: string): { uri: string; dbName: string } {
   try {
     const parsed = new URL(raw.replace(/^mongodb\+srv:\/\//, 'http://').replace(/^mongodb:\/\//, 'http://'));
     const pathname = parsed.pathname.replace(/^\//, '').split('/')[0]?.trim();
-    const dbName = pathname && !pathname.includes('?') ? pathname : 'mathlens';
+    const dbName = pathname && !pathname.includes('?') ? pathname : 'mathengine';
     return { uri: raw, dbName };
   } catch {
-    return { uri: raw, dbName: 'mathlens' };
+    return { uri: raw, dbName: 'mathengine' };
   }
 }
 
@@ -41,7 +41,7 @@ function getDatabaseInstance(): MongoCache {
     serverSelectionTimeoutMS: 5000,
   });
 
-  // Use the parsed database name from the connection string or fallback to 'mathlens'
+  // Use the parsed database name from the connection string or fallback to 'mathengine'
   const db = client.db(targetDbName);
   const instance = { client, db };
 

@@ -1,23 +1,24 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import { Manrope, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({
+const manrope = Manrope({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const plexMono = IBM_Plex_Mono({
   subsets: ['latin'],
+  weight: ['400', '500', '600'],
   variable: '--font-mono',
   display: 'swap',
 });
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://mathlens-rho.vercel.app';
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 
 export const viewport: Viewport = {
-  themeColor: '#FCF9EA',
+  themeColor: '#F3F7F5',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -26,8 +27,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(APP_URL),
   title: {
-    default: 'MathLens • Web CAS | Deterministic Math Solver',
-    template: '%s | MathLens',
+    default: 'Math Engine • Web CAS | Deterministic Math Solver',
+    template: '%s | Math Engine',
   },
   description:
     'Photo, camera, handwriting, and typed math solver. Gemini assists with OCR, then a deterministic client-side CAS solves and verifies each step. Saved history stays on your device.',
@@ -43,9 +44,9 @@ export const metadata: Metadata = {
     'verified math solver',
     'open source math compiler',
   ],
-  authors: [{ name: 'MathLens Team' }],
-  creator: 'MathLens',
-  publisher: 'MathLens',
+  authors: [{ name: 'Math Engine Team' }],
+  creator: 'Math Engine',
+  publisher: 'Math Engine',
   formatDetection: {
     email: false,
     address: false,
@@ -58,14 +59,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: APP_URL,
-    title: 'MathLens • Deterministic Photo & Handwriting Math Solver',
+    title: 'Math Engine • Deterministic Photo & Handwriting Math Solver',
     description:
       'Write, snap, upload, or type math problems. Gemini OCR reads the input; a deterministic client-side CAS solves and verifies the result.',
-    siteName: 'MathLens',
+    siteName: 'Math Engine',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MathLens • Web CAS | Deterministic Math Solver',
+    title: 'Math Engine • Web CAS | Deterministic Math Solver',
     description:
       'Client-side photo, camera & handwriting math solver with verified step-by-step derivations.',
   },
@@ -88,7 +89,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${manrope.variable} ${plexMono.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />

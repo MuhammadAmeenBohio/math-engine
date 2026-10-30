@@ -10,13 +10,14 @@ if (!authSecret && process.env.NODE_ENV === 'production') {
   throw new Error('FATAL: BETTER_AUTH_SECRET (or AUTH_SECRET) is required in production.');
 }
 
-const resend = new Resend(process.env.RESEND_API_KEY || '');
-const fromEmail = process.env.RESEND_FROM_EMAIL || 'MathLens <auth@jamyousuf.me>';
+// The Resend SDK throws in its constructor when given an empty key, so only
+// instantiate it when a real key is configured.
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
+const fromEmail = process.env.RESEND_FROM_EMAIL || 'Math Engine <auth@jamyousuf.me>';
 
 // Dynamic trusted origins supporting production, localhost, and Vercel preview deployments
 function getTrustedOrigins(): string[] {
   const origins: string[] = [
-    'https://mathlens-rho.vercel.app',
     'http://localhost:3000',
     'http://127.0.0.1:3000',
   ];
@@ -54,7 +55,7 @@ export const auth = betterAuth({
     emailOTP({
       async sendVerificationOTP({ email, otp, type }) {
         try {
-          if (!process.env.RESEND_API_KEY) {
+          if (!resend) {
             if (process.env.NODE_ENV !== 'production') {
               console.log(`[DEV OTP] Verification code for ${email} (${type}): ${otp}`);
             } else {
@@ -66,21 +67,21 @@ export const auth = betterAuth({
           await resend.emails.send({
             from: fromEmail,
             to: email,
-            subject: `MathLens Verification Code: ${otp}`,
+            subject: `Math Engine Verification Code: ${otp}`,
             html: `
-              <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #FCF9EA; padding: 40px 20px; color: #1E231D;">
-                <div style="max-width: 480px; margin: 0 auto; background-color: #FFFFFF; border-radius: 16px; border: 1px solid #DFE4DA; padding: 32px; box-shadow: 0 4px 12px rgba(30, 35, 29, 0.05);">
+              <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #F3F7F5; padding: 40px 20px; color: #0F2E22;">
+                <div style="max-width: 480px; margin: 0 auto; background-color: #FFFFFF; border-radius: 16px; border: 1px solid #C3DED2; padding: 32px; box-shadow: 0 4px 12px rgba(15, 46, 34, 0.05);">
                   <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 24px;">
-                    <span style="font-size: 24px; font-weight: 800; letter-spacing: -0.03em; color: #1E231D;">Math<span style="color: #DB9558;">Lens</span></span>
+                    <span style="font-size: 24px; font-weight: 800; letter-spacing: -0.03em; color: #0F2E22;">Math <span style="color: #1A8F6B;">Engine</span></span>
                   </div>
-                  <h2 style="font-size: 20px; font-weight: 700; margin: 0 0 12px; color: #1E231D;">Your Verification Code</h2>
-                  <p style="font-size: 14px; line-height: 1.5; color: rgba(30, 35, 29, 0.7); margin: 0 0 24px;">
-                    Enter the following 6-digit code in MathLens to instantly sign in and sync your deterministic step-by-step math solutions.
+                  <h2 style="font-size: 20px; font-weight: 700; margin: 0 0 12px; color: #0F2E22;">Your Verification Code</h2>
+                  <p style="font-size: 14px; line-height: 1.5; color: rgba(15, 46, 34, 0.7); margin: 0 0 24px;">
+                    Enter the following 6-digit code in Math Engine to instantly sign in and sync your deterministic step-by-step math solutions.
                   </p>
-                  <div style="background-color: #FCF9EA; border: 2px dashed #DB9558; border-radius: 12px; padding: 18px; text-align: center; margin-bottom: 24px;">
-                    <span style="font-family: 'SF Mono', Monaco, Inconsolata, monospace; font-size: 32px; font-weight: 800; letter-spacing: 0.25em; color: #89511A;">${otp}</span>
+                  <div style="background-color: #F3F7F5; border: 2px dashed #1A8F6B; border-radius: 12px; padding: 18px; text-align: center; margin-bottom: 24px;">
+                    <span style="font-family: 'SF Mono', Monaco, Inconsolata, monospace; font-size: 32px; font-weight: 800; letter-spacing: 0.25em; color: #0B3D2E;">${otp}</span>
                   </div>
-                  <p style="font-size: 12px; color: rgba(30, 35, 29, 0.5); margin: 0;">
+                  <p style="font-size: 12px; color: rgba(15, 46, 34, 0.5); margin: 0;">
                     This code expires in 10 minutes. If you did not request this login, you can safely ignore this email.
                   </p>
                 </div>

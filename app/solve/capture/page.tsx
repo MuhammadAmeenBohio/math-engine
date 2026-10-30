@@ -26,8 +26,6 @@ export default function CaptureSolvePage() {
   const [isCameraActive, setIsCameraActive] = useState<boolean>(false);
   const [cameraError, setCameraError] = useState<string | null>(null);
   const [cameraNotice, setCameraNotice] = useState<string | null>(null);
-  const [compositionGrid] = useState<boolean>(true);
-  const [flashActive] = useState<boolean>(false);
 
   // Capture, OCR & Processing State
   const [isProcessingCapture, setIsProcessingCapture] = useState<boolean>(false);
@@ -496,7 +494,7 @@ export default function CaptureSolvePage() {
                     autoPlay
                     playsInline
                     muted
-                    className={`absolute inset-0 h-full w-full object-cover transition-all duration-300 ${flashActive ? 'brightness-125 contrast-125' : ''}`}
+                    className="absolute inset-0 h-full w-full object-cover"
                   />
                 ) : capturedSnapshot ? (
                   <div
@@ -522,47 +520,27 @@ export default function CaptureSolvePage() {
                   </div>
                 )}
 
-                {/* Optional Composition Grid */}
-                {compositionGrid && (
-                  <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 pointer-events-none opacity-20" id="composition-grid">
-                    <div className="border-r border-b border-amber/40"></div>
-                    <div className="border-r border-b border-amber/40"></div>
-                    <div className="border-b border-amber/40"></div>
-                    <div className="border-r border-b border-amber/40"></div>
-                    <div className="border-r border-b border-amber/40"></div>
-                    <div className="border-b border-amber/40"></div>
-                    <div className="border-r border-b border-amber/40"></div>
-                    <div className="border-r border-amber/40"></div>
-                    <div></div>
-                  </div>
-                )}
-
                 {/* Precision Amber Corner Guides (Targeting Box) */}
                 <div className="relative z-10 w-[82%] h-[64%] rounded flex items-center justify-center pointer-events-none">
                   {/* Top-Left Amber Guide */}
                   <div className="absolute top-0 left-0 w-8 h-8 flex flex-col justify-start">
-                    <div className="w-8 h-[2.5px] bg-amber shadow-[0_0_8px_rgba(219,149,88,0.8)] rounded-full"></div>
-                    <div className="w-[2.5px] h-8 bg-amber shadow-[0_0_8px_rgba(219,149,88,0.8)] rounded-full"></div>
+                    <div className="w-8 h-[2.5px] bg-amber rounded-full"></div>
+                    <div className="w-[2.5px] h-8 bg-amber rounded-full"></div>
                   </div>
                   {/* Top-Right Amber Guide */}
                   <div className="absolute top-0 right-0 w-8 h-8 flex flex-col items-end">
-                    <div className="w-8 h-[2.5px] bg-amber shadow-[0_0_8px_rgba(219,149,88,0.8)] rounded-full"></div>
-                    <div className="w-[2.5px] h-8 bg-amber shadow-[0_0_8px_rgba(219,149,88,0.8)] rounded-full"></div>
+                    <div className="w-8 h-[2.5px] bg-amber rounded-full"></div>
+                    <div className="w-[2.5px] h-8 bg-amber rounded-full"></div>
                   </div>
                   {/* Bottom-Left Amber Guide */}
                   <div className="absolute bottom-0 left-0 w-8 h-8 flex flex-col justify-end">
-                    <div className="w-[2.5px] h-8 bg-amber shadow-[0_0_8px_rgba(219,149,88,0.8)] rounded-full"></div>
-                    <div className="w-8 h-[2.5px] bg-amber shadow-[0_0_8px_rgba(219,149,88,0.8)] rounded-full"></div>
+                    <div className="w-[2.5px] h-8 bg-amber rounded-full"></div>
+                    <div className="w-8 h-[2.5px] bg-amber rounded-full"></div>
                   </div>
                   {/* Bottom-Right Amber Guide */}
                   <div className="absolute bottom-0 right-0 w-8 h-8 flex flex-col items-end justify-end">
-                    <div className="w-[2.5px] h-8 bg-amber shadow-[0_0_8px_rgba(219,149,88,0.8)] rounded-full"></div>
-                    <div className="w-8 h-[2.5px] bg-amber shadow-[0_0_8px_rgba(219,149,88,0.8)] rounded-full"></div>
-                  </div>
-
-                  {/* Subtle Scanning Guideline */}
-                  <div className="w-full h-full relative overflow-hidden rounded bg-amber/5">
-                    <div className="absolute inset-x-0 h-0.5 bg-amber/70 animate-[bounce_3s_infinite] shadow-[0_0_12px_rgba(219,149,88,0.8)]"></div>
+                    <div className="w-[2.5px] h-8 bg-amber rounded-full"></div>
+                    <div className="w-8 h-[2.5px] bg-amber rounded-full"></div>
                   </div>
                 </div>
               </div>
